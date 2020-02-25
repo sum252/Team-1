@@ -1,0 +1,2 @@
+RequestType,RequestSubType,SiebelOrderNumber,ExternalBatchId,Cust_MVNOName,AccountNumber,MobileNumber,Status,ErrorDescription,ImportSubType,GroupID
+New Offer,New Offer,1-184676217420,WNN1674,,718615011,0273613369,Cancelled,The SIM card is reserved to another order or already in use. Please check the SIM detail,WBB,

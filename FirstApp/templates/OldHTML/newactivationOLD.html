@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<style type="text/css">
+
+		   body{
+                background-image: url(static/img/003.png);
+
+                background-size:cover;
+            }
+
+
+			div{
+				border:0px solid green;
+			}
+
+			#box{
+				width: 100%;
+				height: 530px;
+				font-size: 15px;;
+				border:0px solid #000000;
+			}
+			
+            #div0{
+				width: 100%;
+				height: 90px;
+     			margin-left:0px;
+				margin-top:50px;
+	/*			margin-bottom:250px;    */
+				margin-right:0px;
+			}
+			
+				 #div1{
+				width: 100%;
+				height: 90px;
+				background-color: gray;
+				background-color:rgba(255,255,255,0.4);
+     			margin-left:0px;
+				margin-top:0px;
+	/*			margin-bottom:20px;    */
+				margin-right:0px;
+			}
+			
+		</style>
+		
+
+	</head>
+	
+	<body>
+<!--Valeria mod: what I changed-->
+<!--Valeria note: what we should change, but it require time-->
+<!--Valeria note in head: put in .css file the common style, so all the file have the same-->
+<!--Valeria mod in head: remouve javasript, in all the pages-->
+	
+	<div id="box" >	
+	<div id="div1">    
+		<table border="0" cellpadding="0px" cellspacing="0"  width="100%" height ="100%" align="left">
+			<tr>
+				<th cellpadding="0" cellspacing="0" align="left"> <img src="static/img/logo.png" height="60" width="180" > </th>
+				<th align="left">SPARK 4G INTERIM PROVISIONING PORTAL</th>
+			</tr>
+			</table>
+		</div>
+	<br/><br/><h3>New Activation</h3>
+	<div id=div0>
+	<form  method="POST" autocomplete="off">
+	
+	<!--Valeria mod and note: action="/action_page.php" deleted,they must to be deleted in all pages-->
+		<table border="0" cellpadding="15px" cellspacing="0"  align="left"><!--Valeria mod and note: deleted width="50%", because this create problem in visuaization,you can put again, no matter, but pay attention if page works!-->
+		    <caption></caption>
+			    {% if error %}
+                   <strong style="color:red">Error: {{ error }}</strong>
+                {% endif %}
+                {% with messages = get_flashed_messages(category_filter=["AllFields"]) %}
+				    {% if messages %}
+				        {% for message in messages %}				    
+				            {{ message }}
+				        {% endfor %}
+				    {% endif %}
+				{% endwith %}
+                <tr>
+				<th align="left" style="width:250px">Customer Account No： </th><!--Valeria note: put all(in all the places) the style in style .css, check if better in% or in pixels>
+				<th align="left" style="width:900px">
+				
+				<input name="CustomerAccountNo" type="text" value="{{request.form.CustomerAccountNo }}" style="width:300px">
+				{% with messages = get_flashed_messages(category_filter=["CustomerAccountNo"]) %}
+				    {% if messages %}
+				        {% for message in messages %}				    
+				            {{ message }}
+				        {% endfor %}
+				    {% endif %}
+				{% endwith %}
+				
+                (Enter just digit)</th>
+
+				<!--Valeria note: put in div all style the cell should be bigger than 200, if not the product cant stay in cell--><!--Valeria mod: remouved javasript, increades to 300-->
+
+			</tr>
+			
+			<tr>
+				<th align="left" style="width:250px">Sim No：</th>
+				<th align="left" style="width:900px">
+				
+				<input name="SIMNo" type="text" value="{{request.form.SIMNo}}" style="width:300px">
+				
+                {% with messages = get_flashed_messages(category_filter=["SIMNo"]) %}
+				    {% if messages %}
+				        {% for message in messages %}				    
+				            {{ message }}
+				        {% endfor %}
+				    {% endif %}
+				{% endwith %}
+                (Enter 17 digits)</th>
+                </th>
+			</tr>
+			
+			<tr>
+				<th align="left" style="width:250px">Elid :</th>
+				<th align="left" style="width:900px"><input name="ELID" type="text" value="{{request.form.ELID}}" style="width:300px">
+				
+				{% with messages = get_flashed_messages(category_filter=["ELID"]) %}
+				    {% if messages %}
+				        {% for message in messages %}				    
+				            {{ message }}
+				        {% endfor %}
+				    {% endif %}
+				{% endwith %}
+				
+				</th>
+			</tr>
+			
+			<tr>
+				<th align="left" style="width:200px">Product Offer ID：</th>
+				<th align="left" style="width:200px">
+				<select style="width:300px" name="ProductOfferID" value="{{request.form.ProductOfferID}}">
+                    <option value="WWBN05001">WWBN05001 - 60GB Naked</option>
+                    <option value="WWBN05003">WWBN05003 - 240GB Naked Urban</option>
+                    <option value="WWBN05002">WWBN05002 - 120GB Naked</option>
+                    <option value="WWBN05006">WWBN05006 - 600GB Naked Metro</option>
+                </select>
+				</th>
+			</tr>
+			
+			<tr>
+				<th><input type="button" onclick="location.href='index'" value="Cancel"></th><!--Valeria mod: location without .html-->
+				<th align="left"><input type=submit value="Submit"></th>
+				
+
+
+			</tr>
+			
+			</table>
+			</form>
+		</div>				
+		{% with messages = get_flashed_messages() %}
+				    {% if messages %}
+				        {% for message in messages %}				    
+				            {{ message }}
+				        {% endfor %}
+				    {% endif %}
+				{% endwith %}
+<br>		
+<div>		
+	<!--	
+		{% with messages = get_flashed_messages() %}
+				    {% if messages %}
+				        {% for message in messages %}				    
+				            {{ message }}
+				        {% endfor %}
+				    {% endif %}
+				{% endwith %}
+	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>		
+
+  <h1>Login</h1>
+  {% if error %}
+    <p><strong>Error:</strong> {{ error }}
+  {% endif %}
+  
+  {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        
+        {% for message in messages %}
+         {{ message }}
+        {% endfor %}
+        
+      {% endif %}
+  {% endwith %}
+  <form method=post>
+    <dl>
+      <dt>Username:
+      <dd><input type=text name=CustomerAccountNo value="{{
+          request.form.CustomerAccountNo }}">
+      <dt>Password:
+      <dd><input type=password name=password>
+    </dl>
+    <p><input type=submit value=Login>
+  </form>
+
+</div>
+
+-->
+		
+	</body>
+</html>

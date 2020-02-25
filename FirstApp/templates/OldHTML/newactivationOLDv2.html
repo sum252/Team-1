@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<style type="text/css">
+
+		   body{
+                background-image: url(static/img/003.png);
+
+
+                background-size:cover;
+            }
+
+
+			div{
+				border:0px solid green;
+			}
+
+			#box{
+				width: 100%;
+				height: 530px;
+				font-size: 15px;;
+				border:0px solid #000000;
+			}
+			
+            #div0{
+				width: 100%;
+				height: 90px;
+     			margin-left:0px;
+				margin-top:50px;
+	/*			margin-bottom:250px;    */
+				margin-right:0px;
+			}
+			
+				 #div1{
+				width: 100%;
+				height: 90px;
+				background-color: gray;
+				background-color:rgba(255,255,255,0.4);
+     			margin-left:0px;
+				margin-top:0px;
+	/*			margin-bottom:20px;    */
+				margin-right:0px;
+				
+				
+				
+
+			}
+
+/*Valeria, Vincent this is the code that I added in head */
+
+#inputElement  > div {
+display: inline-block;
+}	
+div.inputElementLeft{
+    width:20%;
+      padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  vertical-align: top;  
+  text-align: left;
+  vertical-align: text-up; 
+  height: 50px;
+  font-weight: bold;
+}
+div.inputElementRight{
+     width:75%;
+     height: 50px;
+}
+
+
+
+
+		</style>
+<script>
+function confirmInput() {
+  fname = document.forms[0].fname.value;
+  alert("CSV file has been successfully submitting.You will be notified by email.");
+}
+</script>		
+
+	</head>
+	
+	<body>
+<!--Valeria mod: what I changed-->
+<!--Valeria note: what we should change, but it require time-->
+<!--Valeria note in head: put in .css file the common style, so all the file have the same-->
+<!--Valeria mod in head: remouve javasript, in all the pages-->
+	
+<div id="box" >	
+	<div id="div1">    
+		<table border="0" cellpadding="0px" cellspacing="0"  width="100%"  height ="100%" align="left">
+			<tr>
+				<th cellpadding="0" cellspacing="0" align="left"> <img src="static/img/logo.png" height="60" width="180" > </th>
+				<th align="left">SPARK 4G INTERIM PROVISIONING PORTAL</th>
+			</tr>
+		</table>
+	</div>
+	     <br/><br/><h3>New Activation</h3>
+	<div id=div0>
+	<form  method="POST" autocomplete="off">
+	
+	<!--Valeria mod and note: action="/action_page.php" deleted,they must to be deleted in all pages-->
+		<table border="0" cellpadding="15px" cellspacing="0"  align="left"><!--Valeria mod and note: deleted width="50%", because this create problem in visuaization,you can put again, no matter, but pay attention if page works!-->
+		    <caption></caption>
+<!--
+<div id="block_container">
+  <div id="bloc1">Copyright &copy; All Rights Reserved.</div>
+  <div id="bloc2">copyright &copy; All Rights Reserved.</div>
+</div>
+-->
+			  
+            <tr>
+            
+                <!--begin to changed part-->
+                <div id=inputElement>
+                    <div class=inputElementLeft >
+        				Customer Account No： <!--Valeria note: put all(in all the places) the style in style .css, check if better in% or in pixels-->
+                    </div>        
+        			<div class=inputElementRight>
+        				<input name="CustomerAccountNo" type="text" value="{{request.form.CustomerAccountNo }}" style="width:300px"> (Enter just digit <strong style="color:green">16094-503</strong>)
+                        <br>
+                        {% with CustomerAccountNosmss = get_flashed_messages(category_filter=["CustomerAccountNosms"]) %}
+        				    {% if CustomerAccountNosmss %}				    
+        				        {% for msg in CustomerAccountNosmss %}	        				       
+        				            <strong style="color:red">{{ msg }}</strong>        				            
+        				        {% endfor %}
+        				    {% endif %}
+        				{% endwith %}
+                    </div>
+                </div>
+                <!--end of the changed part-->
+                
+                
+			</tr>		
+			<tr>
+			    <!--begin to changed part-->			
+                <div id=inputElement>
+                    <div class=inputElementLeft >
+        				Sim No： 
+                    </div>        
+        			<div class=inputElementRight>
+        				<input name="SIMNo" type="text" value="{{request.form.SIMNo}}" style="width:300px"> (Enter 17 digits <strong style="color:green">12345678901234567</strong>)
+                        <br>
+				        {% with SIMNosmss = get_flashed_messages(category_filter=["SIMNosms"]) %}
+				            {% if SIMNosmss %}				    
+				                {% for msg in SIMNosmss %}				       
+				                    <strong style="color:red">{{ msg }}</strong>				            
+				                {% endfor %}
+				            {% endif %}
+				        {% endwith %}
+                    </div>
+                </div>	
+                <!--end of the changed part-->		
+			</tr>		
+			<tr>			
+                <!--begin to changed part-->
+                <div id=inputElement>
+                    <div class=inputElementLeft >
+        				ELID： 
+                    </div>        
+        			<div class=inputElementRight>
+        				<input name="ELID" type="text" value="{{request.form.ELID}}" style="width:300px"> (Enter 9 digits <strong style="color:green">123456789</strong>)
+                        <br>
+        				{% with ELIDsmss = get_flashed_messages(category_filter=["ELIDsms"]) %}
+        				    {% if ELIDsmss %}				    
+        				        {% for msg in ELIDsmss %}					       
+        				            <strong style="color:red">{{ msg }}</strong>				            
+        				        {% endfor %}
+        				    {% endif %}
+        				{% endwith %}
+                    </div>
+                </div>
+                <!--end of the changed part-->	
+			</tr>		
+			<tr>			
+                <!--begin to changed part-->
+                <div id=inputElement>
+                    <div class=inputElementLeft >
+        				Product Offer ID： 
+                    </div>        
+        			<div class=inputElementRight>   
+			        	<select name="ProductOfferID"  style="width:300px">        			     			
+         				<option selected value="{{request.form.ProductOfferID}}">{{request.form.ProductOfferID}}</option>
+                            <option value="WWBN05001 - 60GB Naked">WWBN05001 - 60GB Naked</option>
+                            <option value="WWBN05003 - 240GB Naked Urban">WWBN05003 - 240GB Naked Urban</option>
+                            <option value="WWBN05002 - 120GB Naked">WWBN05002 - 120GB Naked</option>
+                            <option value="WWBN05006 - 600GB Naked Metro">WWBN05006 - 600GB Naked Metro</option>
+                        </select>          			
+                        <br>
+                        {% with SIMNosmss = get_flashed_messages(category_filter=["ProductOfferIDsms"]) %}
+        				    {% if SIMNosmss %}				    
+        				        {% for msg in SIMNosmss %}	        				       
+        				            <strong style="color:red">{{ msg }}</strong>        				            
+        				        {% endfor %}
+        				    {% endif %}
+        				{% endwith %}
+ 
+                    </div>
+                </div>
+                <!--end of the changed part-->	                
+                
+                		
+	
+			
+			<tr>
+				<th><input type="button" onclick="location.href='index'" value="Cancel"></th><!--Valeria mod: location index without .html-->
+				<th align="left"><input type=submit value="Submit"></th>
+
+
+
+			</tr>
+			
+		</table>
+	</form>
+	</div>	</div>	
+
+
+
+</div>	
+</body>
+</html>

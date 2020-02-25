@@ -1,0 +1,24 @@
+<h3>SPARK 4 G INTERIM PROVISIONING PORTAL</h3>
+              <br><h3>New activation</h3><br>
+              <form method="POST" action="" autocomplete="off">
+             Customer Account No: <input type="text" name="CustomerAccountNo">(Enter just digits) (!!develop time: insert 16094 Complete, 503 Error, 111 no answer)<br><br>
+
+
+             SIM No:  <input type="text" name="SIMNo" placeholder="Now insert just 3 numbers">(Enter 17 Digit Number)(!!develop time: insert just 3 numbers)<br><br>
+             ELID: <input type="text" name="ELID" placeholder="Now insert just 2 numbers">(Enter 9 Digit Number)(!!develop time: insert just 2 numbers)<br><br>
+             Product Offer ID:     
+             <select name="ProductOfferID">
+             <option value="WWBN05001">WWBN05001 - 60GB Naked</option>
+             <option value="WWBN05003">WWBN05003 - 240GB Naked Urban</option>
+             <option value="WWBN05002">WWBN05002 - 120GB Naked</option>
+             <option value="WWBN05006">WWBN05006 - 600GB Naked Metro</option>
+             </select>
+
+
+             <br><br><br>
+             <input type="button" onclick="location.href='index'" value="Cancel"/>    
+             <input type="submit">
+             </form>  
+
+
+{% extends "messagenewactivation.html" %}

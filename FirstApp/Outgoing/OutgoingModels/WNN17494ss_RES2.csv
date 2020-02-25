@@ -1,0 +1,2 @@
+RequestType,RequestSubType,SiebelOrderNumber,ExternalBatchId,Cust_MVNOName,AccountNumber,MobileNumber,Status,ErrorDescription,ImportSubType,GroupID
+Modify,Change SIM,1-184705025899,WNN17494ss,,718615011,0273585037,Complete,,WBB,
