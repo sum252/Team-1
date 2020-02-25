@@ -1,0 +1,2 @@
+RequestType,RequestSubType,SiebelOrderNumber,ExternalBatchId,Cust_MVNOName,AccountNumber,MobileNumber,Status,ErrorDescription,ImportSubType,GroupID
+New Offer,New Offer,1-184375190870,WNN23300,,718615011,0272693629,Complete,,WBB,

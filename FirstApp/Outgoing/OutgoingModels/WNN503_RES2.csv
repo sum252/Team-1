@@ -1,0 +1,2 @@
+RequestType,RequestSubType,SiebelOrderNumber,ExternalBatchId,Cust_MVNOName,AccountNumber,MobileNumber,Status,ErrorDescription,ImportSubType,GroupID
+Terminate,Terminate,,WNN503,,718615011,272757936,Error,No record matching the search specification is found.(SBL-CMI-00122),WBB,
